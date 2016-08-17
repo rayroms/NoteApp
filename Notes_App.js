@@ -28,8 +28,22 @@ class NotesApplication(){
 	}
 	
 	search(search_text){
-		
+		var arr = this.notes; //get notes array 
+		var LabelToRet = 'Showing results for search"+"\'"+"[ " + search_text + " ]"+ "\'" +"\n\n\n"  '; 
+		for(var c = 0; c < arr.length; c++){
+			var matchLoc = arr[c].indexOf(search_text);
+			if(matchLoc !== -1){
+				
+				var label = "Notes ID: " + "[" + c "]" + "\n" 
+						+ arr[c] + "\n\n" + "By Author " + this.author + "\n";
+				LabelToRet.concat(label);
+			}
+		}
+	
+		return LabelToRet;
 	}
+		
+		
 	
 	edit(note_id, new_content){
 		var g = this.notes[note_id] = new_content;
