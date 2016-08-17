@@ -12,7 +12,9 @@ class NotesApplication(){
 		var arr = this.notes; //get notes array 
 		var outputArr = {};
 		for(var c = 0; c < arr.length; c++){
-			
+			var label = "Notes ID: " + "[" + c "]" + "\n" 
+						+ arr[c] + "\n\n" + "By Author " + this.author;
+			console.log(label);
 		}
 	}
 	
@@ -23,6 +25,10 @@ class NotesApplication(){
 	get(note_id){
 		var str = this.notes[note_id]
 		return str.toString;
+	}
+	
+	search(search_text){
+		
 	}
 	
 	edit(note_id, new_content){
