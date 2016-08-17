@@ -1,8 +1,20 @@
-class NotesApplication(){
+class Notes(){
 	constructor(author){
 		this.author = author;
 		this.notes = [];
 	}
+	
+}
+
+
+
+class NotesApplication(newNote){
+	
+	constructor(newNote){
+		this.author = newNote.author;
+		this.notes = newNote.notes;
+	}
+	
 	
 	create(note_content){
 		this.notes.push(note_content);
@@ -18,21 +30,24 @@ class NotesApplication(){
 		}
 	}
 	
-	delete(note_id){
+	
+	delete_(note_id){
 		delete this.notes[notes_id];
 	}
 	
-	get(note_id){
+	get_(note_id){
 		var str = this.notes[note_id]
 		return str.toString;
 	}
 	
+	
 	search(search_text){
+		
 		var arr = this.notes; //get notes array 
-		var LabelToRet = 'Showing results for search"+"\'"+"[ " + search_text + " ]"+ "\'" +"\n\n\n"  '; 
+		var LabelToRet = 'Showing results for search' +"\'"+"[ " + search_text + " ]"+ "\'" +"\n\n\n"; 
 		for(var c = 0; c < arr.length; c++){
-			var matchLoc = arr[c].indexOf(search_text);
-			if(matchLoc !== -1){
+			var locationInStr = arr[c].indexOf(search_text);
+			if(locationInStr !== -1){
 				
 				var label = "Notes ID: " + "[" + c "]" + "\n" 
 						+ arr[c] + "\n\n" + "By Author " + this.author + "\n";
