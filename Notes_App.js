@@ -1,4 +1,4 @@
-class Notes(){
+class Notes{
 	constructor(author){
 		this.author = author;
 		this.notes = [];
@@ -8,7 +8,7 @@ class Notes(){
 
 
 
-class NotesApplication(newNote){
+class NotesApplication{
 	
 	constructor(newNote){
 		this.author = newNote.author;
